@@ -16,10 +16,10 @@ const Currency = () => {
     };
 
     const { dispatch, currency } = useContext(AppContext);
-    const [currencyText, setCurrencyText] = useState(getCurrencyText(currency));
+    // const [currencyText, setCurrencyText] = useState(getCurrencyText(currency));
 
     const setCurrency = (props) => {
-        setCurrencyText(getCurrencyText(props));
+        // setCurrencyText(getCurrencyText(props));
         dispatch({
             type: 'CHG_CURRENCY',
             payload: props
@@ -27,9 +27,9 @@ const Currency = () => {
     };
 
     return (
-        <div className='alert alert-secondary' style={{size: 10}}>
-            <select className='custom-select' id='inputGroupSelect01' onChange={(event) => setCurrency(event.target.value)}>
-                <option defaultValue='' hidden>{currencyText}</option>
+        <div className='alert alert-secondary'>
+            <select className='custom-select' id='inputGroupSelect01' style={{backgroundColor: "lightGreen"}} onChange={(event) => setCurrency(event.target.value)}>
+                <option defaultValue='' hidden>{getCurrencyText(currency)}</option>
                 <option value='$' name='dollar'>$ Dollar</option>
                 <option value='£' name='pound'>£ Pound</option>
                 <option value='€' name='euro'>€ Euro</option>
