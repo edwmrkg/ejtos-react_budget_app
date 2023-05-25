@@ -1,5 +1,5 @@
 import React, { userContext } from 'react';
-import { AppContext } from '..context/AppContext';
+import { AppContext } from '../context/AppContext';
 
 const Remaining = () => {
     const { expenses, budget } = useContext(AppContext);
